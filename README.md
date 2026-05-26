@@ -19,15 +19,11 @@ flowchart LR
 
     twitter[twitter-mcp]:::public
     polymarket[polymarket-mcp]:::public
-    linkedin[linkedin-mcp]:::private
     instagram[instagram-mcp]:::private
-    reddit[reddit-mcp]:::private
 
     twitter    --> claude{{Claude}}
     polymarket --> claude
-    linkedin   --> claude
     instagram  --> claude
-    reddit     --> claude
 
     twitter   --> ingest[social-ingest]
     instagram --> ingest
