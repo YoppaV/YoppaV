@@ -1,18 +1,46 @@
-### Juan Rodríguez
+<h1 align="center">Juan Rodríguez</h1>
 
-Building Claude MCP servers and quant tooling. From Spain.
+<p align="center">
+  <em>Read-only interfaces between the web and Claude.</em>
+</p>
+
+<p align="center">
+  <sub>Madrid · 2026</sub>
+</p>
 
 ---
 
-**Public work**
+### What I'm building
 
-- **[twitter-mcp](https://github.com/YoppaV/twitter-mcp)** — read-only Twitter/X scraper exposed as 17 MCP tools.
-- **[polymarket-mcp](https://github.com/YoppaV/polymarket-mcp)** — Polymarket research MCP, 21 tools across 4 tiers.
+```mermaid
+flowchart LR
+    classDef public stroke:#2ea043,stroke-width:2px,color:#2ea043
+    classDef private stroke:#888,stroke-dasharray:3 3,color:#888
 
-**Stack**
+    twitter[twitter-mcp]:::public
+    polymarket[polymarket-mcp]:::public
+    linkedin[linkedin-mcp]:::private
+    instagram[instagram-mcp]:::private
+    reddit[reddit-mcp]:::private
 
-Python · Playwright · FastMCP · TypeScript · Go · Postgres
+    twitter    --> claude{{Claude}}
+    polymarket --> claude
+    linkedin   --> claude
+    instagram  --> claude
+    reddit     --> claude
 
-**Currently**
+    twitter   --> ingest[social-ingest]
+    instagram --> ingest
+    ingest    --> vault[(Obsidian)]
+```
 
-Wiring agent-driven workflows that read from social/markets and route into a personal knowledge base.
+### Public
+
+- **[twitter-mcp](https://github.com/YoppaV/twitter-mcp)** — read-only Twitter/X for Claude. 17 tools, Playwright + GraphQL interception.
+- **[polymarket-mcp](https://github.com/YoppaV/polymarket-mcp)** — Polymarket research MCP. 21 tools across 4 tiers: wallet forensics, market metadata, cross-wallet correlation.
+
+### /now
+
+Wiring agent workflows that read from social platforms and prediction markets, then route the interesting bits into a personal knowledge graph. Quietly figuring out which of these are worth open-sourcing next.
+
+<sub><code>Python</code> · <code>Playwright</code> · <code>FastMCP</code> · <code>TypeScript</code> · <code>Go</code> · <code>Postgres</code></sub>
