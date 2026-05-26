@@ -19,7 +19,7 @@ flowchart LR
 
     twitter[twitter-mcp]:::public
     polymarket[polymarket-mcp]:::public
-    instagram[instagram-mcp]:::private
+    instagram[instagram-mcp]:::public
 
     twitter    --> claude{{Claude}}
     polymarket --> claude
@@ -33,6 +33,7 @@ flowchart LR
 ### Public
 
 - **[twitter-mcp](https://github.com/YoppaV/twitter-mcp)** — read-only Twitter/X for Claude. 17 tools, Playwright + GraphQL interception.
+- **[instagram-mcp](https://github.com/YoppaV/instagram-mcp)** — read-only Instagram for Claude. Saved posts, collections, feed, reels.
 - **[polymarket-mcp](https://github.com/YoppaV/polymarket-mcp)** — Polymarket research MCP. 21 tools across 4 tiers: wallet forensics, market metadata, cross-wallet correlation.
 
 ### /now
